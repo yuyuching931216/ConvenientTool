@@ -1,0 +1,10 @@
+{
+    "id": "ConvenientTool_plugin",
+    "version": "0.0.1",
+    "name": "Plugin for my own server",
+    "description": "Adding a lot of convenient tool to minecraft server",
+    "author": "Euflra",
+    "dependencies": {
+        "mcdreforged": ">=1.0.0"
+    }
+}

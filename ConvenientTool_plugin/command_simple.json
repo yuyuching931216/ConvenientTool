@@ -1,0 +1,8 @@
+{
+        "simple_command": {
+            "name": "simple",
+            "command": "/title @s title {\"text\":\"Hello, World!\"}",
+            "permission": "0",
+            "description": "showing simple message"
+        }
+}
