@@ -17,11 +17,14 @@ class MC_Command:
         
     def command_init(self):
         file_path = os.path.join(self.server.get_data_folder(), "MC_command.json")
+        if not os.path.exists(file_path):
+            self.new_commandFile()
+
         with open(file_path, "r") as command_file:
             command_data = json.load(command_file)
             for command in command_data:
                 if self.command_check(command_data[command]):
-                    self.command_list[command] = Command_Data(command_data[command])
+                    self.command_list[command.command_name] = Command_Data(command_data[command])
                 else:
                     self.server.logger.error(f"Command {command} is not valid")
                     
@@ -30,4 +33,11 @@ class MC_Command:
             return False
         if command.get("command") is None:
             return False
+        if command.get("command")[0] != "/":
+            command["command"] = "/" + command["command"]
         return True
+    
+    def new_commandFile(self):
+        file_path = os.path.join(self.server.get_data_folder(), "MC_command.json")
+        with open(file_path, "w") as command_file:
+            json.dump(self.command_list, {})
