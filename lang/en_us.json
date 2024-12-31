@@ -1,0 +1,21 @@
+{
+    "ConvenientTool_plugin": {
+        "text": {
+            "help": "§a!!CT help §f- §aDisplay help message\n§a!!CT run <command name> §f- §aExecute command\n§a!!CT reload §f- §aReload plugin\n§a!!CT list §f- §aList all commands",
+            "welcome": "Welcome to use ConvinceTool plugin, type §a!!CT help§f to display help message"
+        },
+        "message": {
+            "reload": "Plugin reload successfully",
+            "command_not_found": "Command not found",
+            "command_list_empty": "No commands stored",
+            "command_execute": "Execute command: ",
+            "command_no_permission": "You don't have permission to use this command"
+        },
+        "literal": {
+            "name": "Name",
+            "command": "Command",
+            "permission": "Permission",
+            "description": "Description"
+        }
+    }
+}

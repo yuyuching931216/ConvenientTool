@@ -1,0 +1,21 @@
+{
+    "ConvenientTool_plugin": {
+        "text": {
+            "help": "§a!!CT help §f- §a顯示幫助訊息\n§a!!CT run <指令名稱> §f- §a執行指令\n§a!!CT reload §f- §a重載插件\n§a!!CT list §f- §a列出所有指令",
+            "welcome": "歡迎使用ConvinceTool插件 輸入§a!!CT help§f以顯示幫助訊息"
+        },
+        "message": {
+            "reload": "插件重載成功",
+            "command_not_found": "指令不存在",
+            "command_list_empty": "沒有任何指令儲存",
+            "command_execute": "執行指令: ",
+            "command_no_permission": "你沒有權限使用此指令"
+        },
+        "literal": {
+            "name": "名稱",
+            "command": "指令內容",
+            "permission": "權限等級",
+            "description": "描述"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "sample1",
+        "command": "/title @a title {\"text\":\"sample message1\"}",
+        "permission": 0,
+        "description": "showing sample message1"
+    },
+    {
+        "name": "範例二",
+        "command": "/title @a title {\"text\":\"範例訊息二\"}",
+        "permission": 3,
+        "description": "顯示範例訊息二"
+    }
+]

@@ -4,27 +4,27 @@ from mcdreforged.api.all import *
 from typing import Dict
 
 class Command_Data(Serializable):
-    command_name: str
+    name: str
     command: str
-    command_permission: int = 0	
-    command_description: str = ""
+    permission: int = 0	
+    description: str = ""
 
 class MC_Command:
     def __init__(self, server: PluginServerInterface):
         self.server = server
-        self.command_list: Dict[str, Command_Data] = {}
         self.command_init()
         
     def command_init(self):
+        self.command_list: Dict[str, Command_Data] = {}
         file_path = os.path.join(self.server.get_data_folder(), "MC_command.json")
         if not os.path.exists(file_path):
             self.new_commandFile()
 
-        with open(file_path, "r") as command_file:
+        with open(file_path, "r", encoding="utf-8") as command_file:
             command_data = json.load(command_file)
             for command in command_data:
-                if self.command_check(command_data[command]):
-                    self.command_list[command.command_name] = Command_Data(command_data[command])
+                if self.command_check(command):
+                    self.command_list[command["name"]] = Command_Data.deserialize(command)
                 else:
                     self.server.logger.error(f"Command {command} is not valid")
                     
@@ -40,4 +40,4 @@ class MC_Command:
     def new_commandFile(self):
         file_path = os.path.join(self.server.get_data_folder(), "MC_command.json")
         with open(file_path, "w") as command_file:
-            json.dump(self.command_list, {})
+            json.dump("[]", command_file)
