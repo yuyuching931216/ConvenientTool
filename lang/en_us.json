@@ -1,8 +1,9 @@
 {
     "ConvenientTool_plugin": {
         "text": {
-            "help": "§a!!CT help §f- §aDisplay help message\n§a!!CT run <command name> §f- §aExecute command\n§a!!CT reload §f- §aReload plugin\n§a!!CT list §f- §aList all commands",
-            "welcome": "Welcome to use ConvinceTool plugin, type §a!!CT help§f to display help message"
+            "help": "§a{prefix} help §f- §aDisplay help message\n§a{prefix} run <command name> §f- §aExecute command\n§a{prefix} reload §f- §aReload plugin\n§a{prefix} list §f- §aList all commands",
+            "welcome": "Welcome to use ConvinceTool plugin, type §a{prefix} help§f to display help message",
+            "MCDR_help": "A command plugin designed for this server"
         },
         "message": {
             "reload": "Plugin reload successfully",

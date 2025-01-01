@@ -26,7 +26,7 @@ class MC_Command:
                 if self.command_check(command):
                     self.command_list[command["name"]] = Command_Data.deserialize(command)
                 else:
-                    self.server.logger.error(f"Command {command} is not valid")
+                    raise ValueError(f"MC_Command.json is not valid")
                     
     def command_check(self, command: dict):
         if command.get("name") is None:

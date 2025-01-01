@@ -1,10 +1,13 @@
 from mcdreforged.api.all import *
-from typing import Dict, Any
+from typing import Dict, Any, Union
 from convenient_tool_plugin.MC_command import MC_Command, Command_Data
 
-def tr(key: str, source: CommandSource) -> str:
-    with source.preferred_language_context():
-        message = source.get_server().tr(f'ConvenientTool_plugin.{key}')
+def tr(key: str, source: Union[CommandSource, PluginServerInterface], **kwargs) -> str:
+    if type(source) == PluginServerInterface:
+        return source.tr(f'ConvenientTool_plugin.{key}', **kwargs)
+    else:
+        with source.preferred_language_context():
+            message = source.get_server().tr(f'ConvenientTool_plugin.{key}', **kwargs)
         return message
 
 class MCDR_CommandManeger:
@@ -16,10 +19,10 @@ class MCDR_CommandManeger:
         self.prefix = config["Prefix"]
     
     def cmd_welcome(self, source: CommandSource):
-        source.reply(tr('text.welcome', source))
+        source.reply(tr('text.welcome', source, prefix=self.prefix))
 
     def cmd_help(self, source: CommandSource):
-        source.reply(tr('text.help', source))
+        source.reply(tr('text.help', source, prefix=self.prefix))
     
     #TODO:
     def cmd_executeCommand(self, source: CommandSource, context: CommandContext):

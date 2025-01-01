@@ -1,8 +1,9 @@
 {
     "ConvenientTool_plugin": {
         "text": {
-            "help": "§a!!CT help §f- §a顯示幫助訊息\n§a!!CT run <指令名稱> §f- §a執行指令\n§a!!CT reload §f- §a重載插件\n§a!!CT list §f- §a列出所有指令",
-            "welcome": "歡迎使用ConvinceTool插件 輸入§a!!CT help§f以顯示幫助訊息"
+            "help": "§a{prefix} help §f- §a顯示幫助訊息\n§a{prefix} run <指令名稱> §f- §a執行指令\n§a{prefix} reload §f- §a重載插件\n§a{prefix} list §f- §a列出所有指令",
+            "welcome": "歡迎使用ConvinceTool插件 輸入§a{prefix} help§f以顯示幫助訊息",
+            "MCDR_help": "一個專門為本伺服器設計的指令插件"
         },
         "message": {
             "reload": "插件重載成功",
