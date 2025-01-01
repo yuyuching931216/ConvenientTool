@@ -21,17 +21,17 @@
 
 配置文件位於`./config/convenient_tool_plugin/convenient_tool.json`
 
-#### Prefix
+#### `Prefix`
 
 插件指令預設前綴
 
 預設為`!!CT`
 
-#### MCDR Command Permission Level
+#### `MCDR Command Permission Level`
 
 插件指令的執行權限
 
-預設為1
+預設為`1`
 
 ## Minecraft指令集
 
@@ -47,18 +47,18 @@
   "description": "指令敘述"
 }
 ```
-#### name
+#### `name`
 
-指令的名稱，也是執行run指令的輸入參數，不得為空，也不得重複
+指令的名稱，也是執行`run`指令的輸入參數，不得為空，也不得重複
 
-#### command
+#### `command`
 
 欲執行的Minecraft指令內容，不得為空
 
-#### permission
+#### `permission`
 
-執行者的Minecraft權限需求，預設為0
+執行者的Minecraft權限需求，預設為`0`
 
-#### description
+#### `description`
 
 指令的介紹，預設為空
