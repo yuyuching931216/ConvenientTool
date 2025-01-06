@@ -17,6 +17,8 @@
 
 `!!CT run <command_name>` 執行名稱為`<command_name>`的指令集
 
+`!!CT skull <player_name>` 獲得名稱為`<command_name>`的玩家頭顱
+
 ##配置文件
 
 配置文件位於`./config/convenient_tool_plugin/convenient_tool.json`
@@ -53,7 +55,7 @@
 
 #### `command`
 
-欲執行的Minecraft指令內容，不得為空
+欲執行的Minecraft指令內容，可以為`str`或是`list`，不得為空
 
 #### `permission`
 
