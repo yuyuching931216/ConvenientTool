@@ -17,7 +17,7 @@
 
 `!!CT run <command_name>` 執行名稱為`<command_name>`的指令集
 
-`!!CT skull <player_name>` 獲得名稱為`<command_name>`的玩家頭顱
+`!!CT skull <player_name>` 獲得名稱為`<player_name>`的玩家頭顱
 
 ##配置文件
 
