@@ -5,7 +5,7 @@ from typing import Dict
 
 class Command_Data(Serializable):
     name: str
-    command: str
+    command: list
     permission: int = 0	
     description: str = ""
 
@@ -33,8 +33,11 @@ class MC_Command:
             return False
         if command.get("command") is None:
             return False
-        if command.get("command")[0] != "/":
-            command["command"] = "/" + command["command"]
+        if type(command.get("command")) == str:
+            command["command"] = [command.get("command")]
+        for command_line in command["command"]:
+            if command_line[0] != "/":
+                command_line = "/" + command_line
         return True
     
     def new_commandFile(self):

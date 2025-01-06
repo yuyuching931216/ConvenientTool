@@ -7,7 +7,7 @@
     },
     {
         "name": "範例二",
-        "command": "/title @a title {\"text\":\"範例訊息二\"}",
+        "command": ["/title @a title {\"text\":\"範例訊息二\"}", "/give @a minecraft stone"],
         "permission": 3,
         "description": "顯示範例訊息二"
     }

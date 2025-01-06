@@ -10,13 +10,28 @@ def tr(key: str, source: Union[CommandSource, PluginServerInterface], **kwargs) 
             message = source.get_server().tr(f'ConvenientTool_plugin.{key}', **kwargs)
         return message
 
+def getPlayerID(source: InfoCommandSource) -> Union[str, None]:
+        if source.is_console:
+            return None
+        return source.get_info().player
+
 class MCDR_CommandManeger:
-    
     def __init__(self, server: PluginServerInterface, mc_command: MC_Command, config: Dict[str, Any]):
         self.server = server
         self.mc_command = mc_command
         self.config = config
         self.prefix = config["Prefix"]
+    
+    def run_command(self, source: CommandSource, command:str):
+        player = getPlayerID(source)
+        if "@p" in command or "@s" in command:
+            if source.is_console:
+                source.reply(tr('message.not_console', source))
+                return
+            command.replace("@p", player)
+            command.replace("@s", player)
+        self.server.execute(command)
+        return
     
     def cmd_welcome(self, source: CommandSource):
         source.reply(tr('text.welcome', source, prefix=self.prefix))
@@ -35,8 +50,9 @@ class MCDR_CommandManeger:
             source.reply(tr('message.command_no_permission', source))
             return
         else:
-            source.reply(tr('message.command_execute', source) + command_id.command)
-            self.server.execute(command_id.command)
+            source.reply(tr('message.command_execute', source) + command_id.name)
+            for command_line in command_id.command:
+                self.run_command(source, command_line)
     
     def cmd_reload_command(self, source: CommandSource):
         self.config = self.server.load_config_simple("convenient_tool.json", self.config)
@@ -64,6 +80,13 @@ class MCDR_CommandManeger:
             if command != list(command_list)[-1]:
                 text += "\n"
             source.reply(text)
+            
+    def cmd_getSkull(self, source: InfoCommandSource, context: CommandContext):
+        if source.is_console:
+            source.reply(tr('message.not_console', source))
+            return
+        player = getPlayerID(source)
+        self.server.execute(f'/give {player} minecraft:player_head[profile={context["playerName"]}]')   
                 
     def register_command(self):
         permission_level: int = self.config["MCDR Command Permission Level"]
@@ -95,6 +118,11 @@ class MCDR_CommandManeger:
             then(
                 Literal("list").
                 runs(self.cmd_list_command)
+            ).
+            then(
+                Literal("skull").
+                then(
+                    Text('playerName').
+                    runs(self.cmd_getSkull))
             )
         )
-

@@ -1,7 +1,7 @@
 {
     "ConvenientTool_plugin": {
         "text": {
-            "help": "§a{prefix} help §f- §a顯示幫助訊息\n§a{prefix} run <指令名稱> §f- §a執行指令\n§a{prefix} reload §f- §a重載插件\n§a{prefix} list §f- §a列出所有指令",
+            "help": "§a{prefix} help §f- §b顯示幫助訊息\n§a{prefix} run <指令名稱> §f- §b執行指令\n§a{prefix} reload §f- §b重載插件\n§a{prefix} list §f- §b列出所有指令\n§a{prefix} skull <玩家名稱> §f- §b獲取玩家頭顱",
             "welcome": "歡迎使用ConvinceTool插件 輸入§a{prefix} help§f以顯示幫助訊息",
             "MCDR_help": "一個專門為本伺服器設計的指令插件"
         },
@@ -10,7 +10,8 @@
             "command_not_found": "指令不存在",
             "command_list_empty": "沒有任何指令儲存",
             "command_execute": "執行指令: ",
-            "command_no_permission": "你沒有權限使用此指令"
+            "command_no_permission": "你沒有權限使用此指令",
+            "not_console": "控制台無法執行此指令"
         },
         "literal": {
             "name": "名稱",

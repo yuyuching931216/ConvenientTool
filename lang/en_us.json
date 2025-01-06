@@ -1,7 +1,7 @@
 {
     "ConvenientTool_plugin": {
         "text": {
-            "help": "§a{prefix} help §f- §aDisplay help message\n§a{prefix} run <command name> §f- §aExecute command\n§a{prefix} reload §f- §aReload plugin\n§a{prefix} list §f- §aList all commands",
+            "help": "§a{prefix} help §f- §bDisplay help message\n§a{prefix} run <command name> §f- §bExecute command\n§a{prefix} reload §f- §bReload plugin\n§a{prefix} list §f- §bList all commands\n§a{prefix} skull <player name> §f- §bGet player's skull",
             "welcome": "Welcome to use ConvinceTool plugin, type §a{prefix} help§f to display help message",
             "MCDR_help": "A command plugin designed for this server"
         },
@@ -10,7 +10,8 @@
             "command_not_found": "Command not found",
             "command_list_empty": "No commands stored",
             "command_execute": "Execute command: ",
-            "command_no_permission": "You don't have permission to use this command"
+            "command_no_permission": "You don't have permission to use this command",
+            "not_console": "You can't use this command in console"
         },
         "literal": {
             "name": "Name",
