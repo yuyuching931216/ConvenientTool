@@ -23,13 +23,13 @@
 
 配置文件位於`./config/convenient_tool_plugin/convenient_tool.json`
 
-#### `Prefix`
+#### `"Prefix"`
 
 插件指令預設前綴
 
 預設為`!!CT`
 
-#### `MCDR Command Permission Level`
+#### `"MCDR Command Permission Level"`
 
 插件指令的執行權限
 
@@ -42,12 +42,14 @@
 指令格式為
 
 ```
-{
-  "name": "指令名稱",
-  "command": "指令內容",
-  "permission": 需要權限,
-  "description": "指令敘述"
-}
+[
+  {
+    "name": "指令名稱",
+    "command": "指令內容",
+    "permission": 需要權限,
+    "description": "指令敘述"
+  }
+]
 ```
 #### `name`
 
